@@ -6,7 +6,6 @@ import ProductModel from "../db/sequelize/model/product";
 
 export default class CustomerRepository implements CustomerRepositoryInterface {
     async create(customer: Customer): Promise<void> {
-        console.log("CUSTOMER RECEIVED AT CREATE ===>", customer.address)
         await CustomerModel.create({
             id: customer.id,
             name: customer.name,
