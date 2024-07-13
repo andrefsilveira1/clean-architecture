@@ -10,6 +10,7 @@ export default class FindCustomerUseCase {
 
     async execute(input: InputFindCustomerDto): Promise<OutputFindCustomerDto> {
         const customer = await this.customerRepository.find(input.id);
+        console.log("CUSTOMER RECEIVED ===>", customer)
 
         return {
             id: customer.id,

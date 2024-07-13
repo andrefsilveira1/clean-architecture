@@ -6,6 +6,7 @@ import ProductModel from "../db/sequelize/model/product";
 
 export default class CustomerRepository implements CustomerRepositoryInterface {
     async create(customer: Customer): Promise<void> {
+        console.log("CUSTOMER RECEIVED AT CREATE ===>", customer.address)
         await CustomerModel.create({
             id: customer.id,
             name: customer.name,
@@ -41,14 +42,18 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
     async find(id: string): Promise<Customer> {
         const model = await CustomerModel.findOne({ where: { id } });
         const address = new Address(model.street, model.number, model.zip, model.city)
-        return new Customer(model.id, model.name);
+        const customer = new Customer(model.id, model.name);
+        customer.changeAddress(address);
+        return customer
     }
 
     async list(): Promise<Customer[]> {
         const models = await CustomerModel.findAll();
         return models.map((customer) => {
             const address = new Address(customer.street, customer.number, customer.zip, customer.city)
-            return new Customer(customer.id, customer.name)
+            const model = new Customer(customer.id, customer.name)
+            model.changeAddress(address)
+            return model
         }
         )
     }
