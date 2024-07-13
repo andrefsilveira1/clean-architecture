@@ -4,10 +4,10 @@ const input = {
     id: "123",
     name: "aaa",
     address: {
-        street: "Street",
+        street: "street",
         number: 123,
-        zip: "Zip",
-        city: "City",
+        zip: "zip",
+        city: "city",
     },
 };
 
@@ -21,11 +21,13 @@ const MockRepository = () => {
     }
 }
 
-describe("Unit test create custoemr use case", () => {
+describe("Unit test create customer use case", () => {
     it("Should create a customer", async () => {
         const customerRepository = MockRepository();
         const customerCreateUseCase = new CreateCustomerUseCase(customerRepository);
         const output = await customerCreateUseCase.execute(input);
+
+        console.log("OUTPUT RECEIVED ===>", output)
 
         expect(output).toEqual({
             id: expect.any(String),
