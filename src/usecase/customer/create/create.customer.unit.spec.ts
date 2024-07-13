@@ -1,3 +1,4 @@
+import Customer from "../../../domain/entity/customer";
 import CreateCustomerUseCase from "./create.customer.usecase";
 
 const input = {
@@ -27,8 +28,6 @@ describe("Unit test create customer use case", () => {
         const customerCreateUseCase = new CreateCustomerUseCase(customerRepository);
         const output = await customerCreateUseCase.execute(input);
 
-        console.log("OUTPUT RECEIVED ===>", output)
-
         expect(output).toEqual({
             id: expect.any(String),
             name: input.name,
@@ -39,5 +38,14 @@ describe("Unit test create customer use case", () => {
                 city: input.address.city
             },
         });
+    });
+
+    it("hould return an error until customer create without name", async () => {
+        const customerRepository = MockRepository();
+        const customerCreateUseCase = new CreateCustomerUseCase(customerRepository);
+
+        input.name = "";
+
+        await expect(customerCreateUseCase.execute(input)).rejects.toThrow("Name is required")
     })
 })
