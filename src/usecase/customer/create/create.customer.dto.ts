@@ -10,7 +10,7 @@ export interface InputCreateCustomerDto {
     };
 }
 
-export interface OutputCreateCustoemrDto {
+export interface OutputCreateCustomerDto {
     id: string;
     name: string;
     address: {

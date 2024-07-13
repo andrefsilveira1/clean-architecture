@@ -1,3 +1,5 @@
+import CreateCustomerUseCase from "./create.customer.usecase";
+
 const input = {
     id: "123",
     name: "aaa",
@@ -22,8 +24,8 @@ const MockRepository = () => {
 describe("Unit test create custoemr use case", () => {
     it("Should create a customer", async () => {
         const customerRepository = MockRepository();
-        const customerCreateUseCase = new CustomerCreateUseCase(customerRepository);
-        const output = await customerCreateUseCase.create(input);
+        const customerCreateUseCase = new CreateCustomerUseCase(customerRepository);
+        const output = await customerCreateUseCase.execute(input);
 
         expect(output).toEqual({
             id: expect.any(String),
