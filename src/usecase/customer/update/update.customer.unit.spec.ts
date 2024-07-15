@@ -1,5 +1,6 @@
 import Address from "../../../domain/entity/address";
 import CustomerFactory from "../../../domain/factory/customer.factory";
+import UpdateCustomerUseCase from "./update.customer.usecase";
 
 const customer = CustomerFactory.createWithAddress(
     "aaa", new Address("street", 123, "zip", "city")
