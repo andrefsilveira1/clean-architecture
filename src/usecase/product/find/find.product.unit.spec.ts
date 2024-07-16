@@ -1,4 +1,5 @@
 import Product from "../../../domain/entity/product"
+import FindProductUseCase from "./find.product.usecase"
 
 const input = {
     id: "123",
