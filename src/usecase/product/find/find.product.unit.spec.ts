@@ -6,7 +6,7 @@ const input = {
 }
 
 
-const product = new Product("123", "product 1", 150.00)
+const product = new Product("123", "product 1", 150.00);
 
 const MockRepository = () => {
     return {
@@ -17,7 +17,7 @@ const MockRepository = () => {
     }
 }
 
-describe("Unit test create product use case", () => {
+describe("Unit test find product unit use case", () => {
     it("Should find a product", async () => {
         const productRepository = MockRepository();
         const productCreateUseCase = new FindProductUseCase(productRepository);
