@@ -5,11 +5,6 @@ const input = {
     id: "123",
 }
 
-const output = {
-    id: "123",
-    name: "product 1",
-    price: 150.00
-}
 
 const product = new Product("123", "product 1", 150.00)
 
