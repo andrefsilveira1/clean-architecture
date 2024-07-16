@@ -40,7 +40,7 @@ describe("Unit test create product use case", () => {
     it("Should return an error until product create without price", async () => {
         const productRepository = MockRepository();
         const productCreateUseCase = new CreateProductUseCase(productRepository);
-
+        input.name = "aaa";
         input.price = -1;
 
         await expect(productCreateUseCase.execute(input)).rejects.toThrow("Price can not be negative");
