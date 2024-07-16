@@ -1,6 +1,6 @@
+import CreateProductUseCase from "./create.product.usecase";
 
 const input = {
-    id: "123",
     name: "product 1",
     price: 150.00,
 }
@@ -25,6 +25,6 @@ describe("Unit test create product use case", () => {
             id: expect.any(String),
             name: input.name,
             price: input.price,
-        })
-    })
-})
+        });
+    });
+});
