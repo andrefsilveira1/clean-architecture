@@ -40,7 +40,7 @@ describe("Unit test create customer use case", () => {
         });
     });
 
-    it("hould return an error until customer create without name", async () => {
+    it("should return an error until customer create without name", async () => {
         const customerRepository = MockRepository();
         const customerCreateUseCase = new CreateCustomerUseCase(customerRepository);
 
