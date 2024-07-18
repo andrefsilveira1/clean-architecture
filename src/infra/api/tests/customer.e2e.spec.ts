@@ -24,9 +24,9 @@ describe("E2E test for customer", () => {
             });
         expect(respose.status).toBe(200);
         expect(respose.body.name).toBe("John");
-        expect(respose.body.street).toBe("street");
-        expect(respose.body.city).toBe("city");
-        expect(respose.body.number).toBe(123);
-        expect(respose.body.zip).toBe("12345");
+        expect(respose.body.address.street).toBe("street");
+        expect(respose.body.address.city).toBe("city");
+        expect(respose.body.address.number).toBe(123);
+        expect(respose.body.address.zip).toBe("12345");
     })
 });
