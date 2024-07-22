@@ -54,13 +54,13 @@ describe("E2E test for product", () => {
             .send();
         
         expect(response.status).toBe(200);
-        expect(response.body.customers.length).toBe(2);
-        const customer = response.body.customers[0];
-        expect(customer.name).toBe("product 1");
-        expect(customer.price).toBe(150.5);
+        expect(response.body.products.length).toBe(2);
+        const product = response.body.products[0];
+        expect(product._name).toBe("product 1");
+        expect(product._price).toBe(150.5);
 
-        const customer2 = response.body.customers[1];
-        expect(customer2.name).toBe("product 2");
-        expect(customer2.price).toBe(199.9);
+        const product2 = response.body.products[1];
+        expect(product2._name).toBe("product 2");
+        expect(product2._price).toBe(199.9);
     });
 });
