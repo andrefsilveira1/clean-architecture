@@ -11,9 +11,11 @@ export default class Notification {
     }
 
     messages(context: string): string {
-        return this.errors
-            .filter((error) => error.context === context)
-            .map((error) => error.message)
-            .join(",");
+        let message = "";
+        this.errors.forEach(error => {
+            message += `${error.context}: ${error.message},`
+        });
+
+        return message
     }
 }
