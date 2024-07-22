@@ -10,7 +10,7 @@ export default class ListProductUseCase {
 
     async execute(input: InputListProductDto): Promise<OutputListProductDto> {
         const product = await this.productRepository.list();
-
+        
         return {
             products: product
         }
