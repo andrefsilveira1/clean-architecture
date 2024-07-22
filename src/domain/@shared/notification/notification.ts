@@ -8,7 +8,7 @@ export default class Notification {
 
     addError(error: NotificationError) {
         this.errors.push(error);
-    }
+    };
 
     messages(context?: string): string {
         let message = "";
@@ -19,5 +19,9 @@ export default class Notification {
         });
 
         return message
+    };
+
+    hasErrors(): Boolean {
+        return this.errors.length > 0;
     }
 }

@@ -31,5 +31,15 @@ describe("Unit test for Notification", () => {
         expect(notification.messages("Customer")).toBe("Customer: Error message,Customer: Error message2,");
         expect(notification.messages()).toBe("Customer: Error message,Customer: Error message2,Order: Error message3,");
 
+    });
+
+    it("Should check notification at customer", () => {
+        const notification = new Notification();
+        const error = {
+            message: "Error message",
+            context: "Customer",
+        };
+        notification.addError(error);
+        expect(notification.hasErrors()).toBe(true);
     })
 })
