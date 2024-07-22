@@ -1,4 +1,4 @@
-import EventInterface from "../@shared/event.interface";
+import EventInterface from "../event.interface";
 
 export default class AddressChangedEvent implements EventInterface {
     dataTimeOccurred: Date;

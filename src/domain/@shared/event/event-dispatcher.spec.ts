@@ -1,11 +1,11 @@
-import AddressChangedEvent from "../costumer/address-changed.event";
-import CustomerCreatedEvent from "../costumer/customer-created.event";
-import EnviaConsoleLogHandler from "../costumer/handlers/change-address-handler";
-import EnviaConsoleLog1Handler from "../costumer/handlers/console-log-handler1";
-import EnviaConsoleLog2Handler from "../costumer/handlers/console-log-handler2";
-import sendEmailWhenProductIsCreatedHandler from "../product/handlers/send-email";
-import ProductCreatedEvent from "../product/product-created.event";
+import AddressChangedEvent from "./customer/address-changed.event";
+import CustomerCreatedEvent from "./customer/customer-created.event";
+import EnviaConsoleLogHandler from "./customer/handlers/change-address-handler";
+import EnviaConsoleLog1Handler from "./customer/handlers/console-log-handler1";
+import EnviaConsoleLog2Handler from "./customer/handlers/console-log-handler2";
 import EventDispatcher from "./event-dispatcher";
+import sendEmailWhenProductIsCreatedHandler from "./product/handlers/send-email";
+import ProductCreatedEvent from "./product/product-created.event";
 
 describe("Domain Events tests", () => {
     it("Should register an event handler", () => {
