@@ -25,7 +25,13 @@ describe("Customer unit test", () => {
             const customer = new Customer("1", "Customer 1");
             customer.activate();
         }).toThrowError("Address is required")
-    })
+    });
+
+    it("Should throw error when Name is empty and Id is undefined", () => {
+        expect(() => {
+            let customer = new Customer("", "");
+        }).toThrowError("Customer: Id is required,Customer: Name is required");
+    });
 
 
     it("Should deactivate customer", () => {
