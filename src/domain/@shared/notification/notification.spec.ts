@@ -20,7 +20,7 @@ describe("Unit test for Notification", () => {
         notification.addError(error2)
 
         expect(notification.messages("Customer")).toBe("Customer: Error message,Customer: Error message2,");
-        
+
         const error3 = {
             message: "Error message3",
             context: "Order",
@@ -41,5 +41,15 @@ describe("Unit test for Notification", () => {
         };
         notification.addError(error);
         expect(notification.hasErrors()).toBe(true);
-    })
+    });
+
+    it("Should get errors props", () => {
+        const notification = new Notification();
+        const error = {
+            message: "Error message",
+            context: "Customer",
+        };
+        notification.addError(error);
+        expect(notification.getErrors()).toEqual([error]);
+    });
 })
